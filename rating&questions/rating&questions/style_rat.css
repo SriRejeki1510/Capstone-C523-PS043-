@@ -1,0 +1,250 @@
+/** @format */
+
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(293deg, #7752fe 0%, #1a0582 100%);
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  position: relative;
+  width: 400px;
+  background: rgba(243, 248, 255, 0.7); /* Menggunakan rgba dengan alpha 0.7 */
+  padding: 20px 30px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container .rating-text,
+.container .post .text {
+  color: #000;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.container .rating-text::after {
+  content: ":";
+  margin-left: 5px;
+}
+
+.container .post {
+  display: none;
+}
+
+.container .edit {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 16px;
+  color: #666;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.container .edit:hover {
+  text-decoration: underline;
+}
+
+.container .start-widget input {
+  display: none;
+}
+
+.container .start-widget label {
+  font-size: 40px;
+  color: #444;
+  padding: 10px;
+  float: right;
+  transition: all 0.2s ease;
+}
+
+input:not(:checked) ~ label:hover,
+input:not(:checked) ~ label:hover ~ label {
+  color: #fd4;
+}
+
+input:checked ~ label {
+  color: #fd4;
+}
+
+input#rate-1:checked ~ label {
+  color: rgb(252, 232, 78);
+}
+
+input#rate-2:checked ~ label {
+  color: rgb(252, 232, 78);
+}
+
+input#rate-3:checked ~ label {
+  color: rgb(252, 232, 78);
+}
+
+input#rate-4:checked ~ label {
+  color: rgb(252, 232, 78);
+}
+
+input#rate-5:checked ~ label {
+  color: rgb(252, 232, 78);
+  text-shadow: 0 0 20px #952;
+}
+
+#rate-1:checked ~ form header::before {
+  content: "Saya sangat tidak suka hari ini 😠";
+}
+
+#rate-2:checked ~ form header::before {
+  content: "Saya tidak suka hari ini 😒";
+}
+
+#rate-3:checked ~ form header::before {
+  content: "Saya merasa biasa hari ini😀";
+}
+
+#rate-4:checked ~ form header::before {
+  content: "Saya suka hari ini 😎";
+}
+
+#rate-5:checked ~ form header::before {
+  content: "Saya sangat suka hari ini😍";
+}
+
+.container form {
+  display: none;
+}
+
+input:checked ~ form {
+  display: block;
+}
+
+form header {
+  width: 100%;
+  font-size: 25px;
+  color: #000;
+  font-weight: 500;
+  margin: 5px 0 20px 0;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+form .textarea {
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
+}
+
+form .textarea textarea {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: #000;
+  border: 2px solid #9c82fa;
+  border-radius: 10px;
+  background: #fff;
+  padding: 10px;
+  font-size: 17px;
+  resize: none;
+}
+
+form .btn {
+  height: 45px;
+  width: 100%;
+  margin: 15px 0;
+}
+
+form .btn button {
+  height: 100%;
+  width: 50%;
+  border: 1px solid #444;
+  border-radius: 10px;
+  outline: none;
+  background: #7752fe;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form .btn button:hover {
+  background: #9c82fa;
+}
+
+.popup {
+  width: 400px;
+  background: #fff;
+  border-radius: 6px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  text-align: center;
+  padding: 0 30px 30px;
+  color: #333;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+}
+
+.open-popup {
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.popup img {
+  width: 100px;
+  margin-top: -50px;
+  border-radius: 50px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.popup h2 {
+  font-size: 38px;
+  font-weight: 500;
+  margin: 30px 0 10px;
+}
+
+.popup button {
+  width: 100%;
+  margin-top: 10px;
+  /* Ubah margin-top ke 10px */
+  padding: 10px 0;
+  background: #7752fe;
+  color: #fff;
+  border: 0;
+  outline: none;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.popup button:hover {
+  background: #9c82fa;
+}
+
+/* Tambahkan gaya untuk tombol "Back to Main Page" */
+.popup button:nth-child(2) {
+  background: #4a90e2;
+  margin-top: 10px;
+  /* Sesuaikan margin-top */
+}
