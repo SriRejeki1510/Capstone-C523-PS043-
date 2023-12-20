@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #ececec;
+}
+
+/* /------------ Login container ------------/  */
+.box-area {
+    width: 100%;
+    /* Use full width for better responsiveness */
+    max-width: 930px;
+    /* Set a maximum width to avoid stretching on larger screens */
+    margin: 0 auto;
+    /* Center the container */
+    box-sizing: border-box;
+    /* Include padding and border in the width */
+}
+
+/* /------------ Right box ------------/  */
+.right-box {
+    padding: 40px 30px 40px 40px;
+}
+
+/* /------------ Custom Placeholder ------------/ */
+::placeholder {
+    font-size: 16px;
+}
+
+.rounded-4 {
+    border-radius: 20px;
+}
+
+.rounded-5 {
+    border-radius: 30px;
+}
+
+.input-group2 {
+    width: 100%;
+    /* Use full width */
+    max-width: 380px;
+    /* Set a maximum width for better readability */
+    margin: 0 auto;
+    /* Center the input group */
+}
+
+form .indicator {
+    height: 10px;
+    margin: 10px;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Remove duplicate justify-content property */
+    display: none;
+}
+
+form .indicator span {
+    position: relative;
+    height: 100%;
+    width: 30%;
+    background: lightgrey;
+    border-radius: 5px;
+}
+
+form .indicator span:nth-child(2) {
+    margin: 0 3px;
+}
+
+form .indicator span.active:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.indicator span.weak:before {
+    background-color: #ff4757;
+}
+
+.indicator span.medium:before {
+    background-color: orange;
+}
+
+.indicator span.strong:before {
+    background-color: #23ad5c;
+}
+
+.text {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.text.weak {
+    color: #ff4757;
+}
+
+.text.medium {
+    color: orange;
+}
+
+.text.strong {
+    color: #23ad5c;
+}
+
+/* /------------ For small screens------------/ */
+/* Gaya CSS untuk Responsif pada Layar Kecil */
+@media only screen and (max-width: 768px) {
+
+    /* Left Box with Carousel */
+    .left-box {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    #imageCarousel {
+        max-width: 100%;
+        margin-bottom: 20px;
+        height: 250px;
+    }
+
+    .text-white {
+        text-align: center;
+    }
+
+    .text-wrap {
+        width: auto;
+    }
+
+    /* Password Input */
+    .field {
+        width: 100%;
+        max-width: none;
+        /* Remove the max-width for better responsiveness */
+        margin: 0 auto;
+    }
+
+    .field input {
+        width: 100%;
+        /* Use full width for small screens */
+        box-sizing: border-box;
+    }
+
+    .showBtn {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .showBtn img {
+        width: 30px;
+        height: 30px;
+        margin-top: 3px;
+        margin-right: 7px;
+    }
+
+    .indicator,
+    .text {
+        margin-right: 0;
+    }
+}
